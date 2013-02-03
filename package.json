@@ -1,0 +1,8 @@
+{
+  "name": "Observable",
+  "version": "0.1.0",
+  "description": "An Observable mixin for event handling behaviour",
+  "main": "index.js",
+  "author": "Tom Wieland",
+  "license": "MIT"
+}
