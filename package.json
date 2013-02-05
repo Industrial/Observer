@@ -4,5 +4,14 @@
   "description": "An Observable mixin for event handling behaviour",
   "main": "index.js",
   "author": "Tom Wieland",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "LiveScript": "1.1.1",
+    "mocha": "1.8.1",
+    "tape": "0.2.2",
+    "tap": "0.4.0"
+  },
+  "scripts": {
+    "test": "mocha ./test"
+  }
 }
