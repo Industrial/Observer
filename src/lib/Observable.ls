@@ -1,24 +1,36 @@
-export Observable = do
-  events: {}
+export Observable = !(o) ->
+  o.events = {}
 
-  on: (e, fn) ->
-    @events[][e].push fn
+  o.on = !(e, fn) ->
+    handlers = @events[e] = @events[e] or []
+    handlers.push fn
 
-  once: (e, fn) ->
-    @events[][e].push ~>
+  o.off = !(e, fn) ->
+    if e
+      if fn
+        handlers = @events[e]
+        for f, i in handlers
+          if f is fn
+            handlers.splice i
+      else
+        @events[e] = []
+    else
+      @events = {}
+
+  o.once = !(e, fn) ->
+    handlers = @events[e] = @events[e] or []
+    handlers.push ~>
       @off e, fn
       fn!
 
-  off: (e, fn) ->
-    | e and fn  => @events[e] .= filter (!= fn)
-    | e         => @events[e] = {}
-    | otherwise => @events = {}
+  o.emit = !(e, ...args) ->
+    handlers = @events[e]
+    if handlers
+      for handler in handlers
+        handler ...args
 
-  emit: (e, ...args) ->
-    each ((x) -> x? ...args), @events[e] if @events[e]
-
-  listeners: (e) ->
+  o.listeners = (e) ->
     @events[e] or []
 
-  hasListeners: (e) ->
+  o.has-listeners = (e) ->
     @events[e].length > 0
