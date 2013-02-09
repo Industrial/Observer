@@ -1,12 +1,10 @@
 if (typeof require !== 'undefined') {
-  buster = require('buster');
-  sinon = require('sinon');
-  Observable = require('../lib/Observable').Observable;
+  var buster = require('buster'),
+    sinon = require('sinon'),
+    Observable = require('../lib/Observable').Observable;
 }
 
-
 buster.spec.expose();
-
 
 var spec = describe('Observable', function() {
   before(function() {
