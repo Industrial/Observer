@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "description": "An Observable function for event handling behaviour",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "git://github.com/Industrial/Observer.git",
   "author": "Tom Wieland",
   "license": "MIT",
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
     "sinon": "*"
-  },
-  "scripts": {
-    "test": "mocha"
   }
 }
