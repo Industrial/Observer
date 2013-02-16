@@ -1,6 +1,5 @@
-# Observable
-An Observable mixin for adding event handling behaviour to a JavaScript
-Function.
+# Observer
+An Observer prototype function for event based programming.
 
 ## Usage
     var myObserver = new Observer();
