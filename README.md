@@ -3,22 +3,17 @@ An Observable mixin for adding event handling behaviour to a JavaScript
 Function.
 
 ## Usage
-    var MyClass = function MyClass() {
-      Observable(this);
-    };
+    var myObserver = new Observer();
 
-    var myInstance = new MyClass();
-
-    myInstance.on('hello', function(name) {
+    myObserver.on('hello', function(name) {
       console.log('Hello there, ' + name);
     });
 
     // somewhere down the line
-    myInstance.emit('hello', 'Bob');
+    myObserver.emit('hello', 'Bob');
+
+For the full API, see the tests for now.
 
 ## Tests
-    $ buster server;
-    $ buster test;
+    $ npm test;
 
-## TODO
-Document ALL THE THINGS!
