@@ -7,7 +7,7 @@
     "test": "mocha"
   },
   "repository": "git://github.com/Industrial/Observer.git",
-  "author": "Tom Wieland",
+  "author": "Industrial",
   "license": "MIT",
   "devDependencies": {
     "mocha": "*",
